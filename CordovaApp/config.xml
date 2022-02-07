@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="DDD.Abdullah.iti.Seba3i" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>DriverDistractedDetection</name>
+    <description>This project focuses on driver distraction activities detection via images, which is useful for vehicle accident precaution.</description>
+    <author email="abdullah.abdelhakeem25@gmail.com" href="abdullah.abdelhakeem25@gmail.com">
+        Driver Distracted Detection Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <icon src="res/icon.png" />
+</widget>
