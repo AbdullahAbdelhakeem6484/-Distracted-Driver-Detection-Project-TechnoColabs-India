@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../static/css/all.min.css" rel="stylesheet" />
+    <!-- <link href="../static/css/templatem-style.css" rel="stylesheet" /> -->
+
+    <title>Distracted Driver</title>
+
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <!-- Templatemo style -->
+</head>
+
+<body>
+
+
+<!---------------------------   ChatBot style -------------------------------->
+<style>
+.rw-conversation-container .rw-header{ background-color: #fa7070;}
+.rw-conversation-container  .rw-messages-container .rw-message .rw-client{ background-color: #fa7070;}
+.rw-launcher{ background-color: #fa7070;}
+
+</style>
+<!---------------------------   End ChatBot style -------------------------------->
+
+
+<!---------------------------   ChatBot Script -------------------------------->
+<script>!(function () {
+  let e = document.createElement("script"),
+    t = document.head || document.getElementsByTagName("head")[0];
+  (e.src =
+    "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+    // Replace 1.x.x with the version that you want
+    (e.async = !0),
+    (e.onload = () => {
+      window.WebChat.default(
+        {
+          initPayload: '/greet',
+          customData: { language: "en" },
+          socketUrl: "http://localhost:5005",
+          title: 'ITI Bot',
+          subtitle: 'Say hi and get started!'
+          // add other props here
+        },
+        null
+      );
+    }),
+    t.insertBefore(e, t.firstChild);
+})();
+</script>
+<!---------------------------   End ChatBot Script -------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <header class="text-center tm-site-header">
+                    <div class="tm-site-logo"></div>
+                    <h1 class="pl-4 tm-site-title">Distracted Driver Detection</h1>
+                </header>
+            </div>
+        </div>
+        
+    </div>
+	
+	<!-------------------------------------------------------------------------------------->
+	
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tm-welcome-text">Select Image to Predict</h2>
+                </div>
+            </div>
+
+			<div class="row">
+				
+				<form method="post" action="https://distracteddriver-detection-app.herokuapp.com/predict" enctype="multipart/form-data">
+					<dl>
+						<p>
+							<input type="file" name="file" class="form-control" autocomplete="off" required>
+						</p>
+					</dl>
+					<p>
+						<input type="submit" value="Predict The Driver Distraction Class" class="btn btn-info">
+					</p>
+					<br><br>
+				</form>
+		
+
+			</div>
+		</div>
+	<div class="container">
+		<div class="row">
+				<div class="col-lg-12">
+					
+				<!--<h2>
+					{% with messages = get_flashed_messages() %}
+					  {% if messages %}
+						<ul>
+						{% for message in messages %}
+						  <li>{{ message }}</li>
+						{% endfor %}
+						</ul>
+					  {% endif %}
+					{% endwith %}
+					<br>
+				</h2>-->
+
+				<div class="row">
+	                <div class="col-lg-12">
+	                    <img src="{{ url_for('image_feed') }}" alt="">
+	                </div>
+            	</div>
+    
+    </div>
+    </div>
+</div>
+
+
+    <br><br>
+	
+	<!---------------------------------------------------------------------------------------->	
+	<div class="container">
+		<div class="row">
+				<div class="col-lg-12">
+					<div class="tm-video-container">
+						<video width="320" height="240" id="tm-welcome-video" class="tm-welcome-video" autoplay="" loop="" muted="">
+							<source src="videos/video.mp4" type="video/mp4"> Welcome at Anywhere.
+                        </video>
+                        <div id="tm-video-loader"></div>
+                        <div id="tm-video-text-overlay" class="tm-video-text-overlay d-none">
+                            <h1>
+                                <div id="rotate" class="tm-video-text">
+                                    <div>Welcome to Technocolabs</div>
+                                    <div>Distracted Driver Detection</div>
+                                </div>
+                            </h1>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+		
+        <div class="container tm-container-2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="tm-welcome-text">The Team</h2>
+                </div>
+            </div>
+            <div class="row tm-section-mb">
+                <div class="col-lg-12">
+				
+
+
+
+
+				
+                    <div class=" tm-timeline-item">
+                        <div class="tm-timeline-item-inner">
+                            <img src="img/img-01.jpg" alt="Image" class="rounded-circle tm-img-timeline">
+                            <div class="tm-timeline-connector">
+                                <p class="mb-0">&nbsp;</p>
+                            </div>
+                            <div class="tm-timeline-description-wrap">
+                                <div class="tm-bg-dark tm-timeline-description">
+                                    <h3 class="tm-text-green tm-font-400">Abdullah Abdelhakeem </h3>
+                                    <p>Machine Learning Engineer graduated from Mechatronics Engineering</p>
+                                    <p class="tm-text-green float-right mb-0">AWS Machine Learning Certified </p>
+									
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tm-timeline-connector-vertical"></div>
+                    </div>
+
+                    <div class="tm-timeline-item">
+                        <div class="tm-timeline-item-inner">
+                            <img src="img/img-02.jpg" alt="Image" class="rounded-circle tm-img-timeline">
+                            <div class="tm-timeline-connector">
+                                <p class="mb-0">&nbsp;</p>
+                            </div>
+                            <div class="tm-timeline-description-wrap">
+                                <div class="tm-bg-dark-light tm-timeline-description">
+                                    <h3 class="tm-text-cyan tm-font-400">Mohamed Sebaie</h3>
+                                    <p>Machine Learning Engineer graduated from Petroleum Engineering.</p>
+                                    <p class="tm-text-cyan float-right mb-0">AWS Machine Learning Certified </p>
+
+
+
+
+									
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tm-timeline-connector-vertical"></div>
+                    </div>
+					
+					
+
+                    <div class="tm-timeline-item">
+                        <div class="tm-timeline-item-inner">
+                            <img src="img/img-03.jpg" alt="Image" class="rounded-circle tm-img-timeline">
+                            <div class="tm-timeline-connector">
+                                <p class="mb-0">&nbsp;</p>
+                            </div>
+                            <div class="tm-timeline-description-wrap">
+                                <div class="tm-bg-dark tm-timeline-description">
+                                    <h3 class="tm-text-yellow tm-font-400">Mahmoud Salama</h3>
+                                    <p>Machine Learning Engineer graduated from Geology Science.</p>
+                                    <p class="tm-text-yellow float-right mb-0">AWS Machine Learning Certified </p>
+									
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="tm-timeline-connector-vertical"></div>-->
+                    </div>
+	
+
+                </div>
+            </div>
+            <!--  row -->
+            <hr>
+            
+            <hr>
+			
+			
+		
+        <hr>
+        <!-- Footer -->
+        <footer class="row mt-5 mb-5">
+            <div class="col-lg-12">
+                <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
+                    <span class="tm-current-year">2022</span> Technocolabs
+                    
+                   <a href="https://github.com/AbdullahAbdelhakeem6484/-Distracted-Driver-Detection-Project-TechnoColabs-India" class="tm-text-white"> GitHub Project Link</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- .container -->
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/jquery-3.2.1.slim.min.js"></script> -->
+    <script src="js/templatemo-script.js"></script>
+
+</body>
+</html>
